@@ -103,7 +103,7 @@ if(fab&&drawer){
 updateCartUI();
 
 // صور احتياطية: لو أي صورة ما حملت، نعرض صورة اللحم الأساسية
-const IMG_FALLBACK='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop';
+const IMG_FALLBACK='assets/img/siniya.jpg';
 function guardImg(im){ im.addEventListener('error',()=>{ if(!im.dataset.fb){ im.dataset.fb='1'; im.src=IMG_FALLBACK; } }); }
 $$('img').forEach(guardImg);
 
@@ -114,7 +114,7 @@ const MOODS={
   cheesy:{t:'الجبنية',d:'لحم + دبل جبن + صوص جبن + بصل مكرمل. جزء من اللحم يجي مغطى بجبن ذايب.',tags:['خبز عربي','دبل جبن','صوص جبن'],img:'https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=900&auto=format&fit=crop'},
   crunchy:{t:'المقرمشة',d:'لحم + مكون مقرمش + خس وبصل + صوص خاص بالخبز العربي. قرمشة مع كل لقمة.',tags:['خبز عربي','مقرمش','صوص خاص'],img:'https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=900&auto=format&fit=crop'},
   sweet:{t:'حلوة / مالحة',d:'لحم + بصل مكرمل + مخلل + جبن + الصوص الخاص. توازن حلا وملوحة في لقمة واحدة.',tags:['خبز عربي','بصل مكرمل','الصوص الخاص'],img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=900&auto=format&fit=crop'},
-  special:{t:'الخاصة',d:'لقمتك توقيعك: لحم + خلطة صوصين + جبن + مقرمش + حار خفيف بالخبز العربي.',tags:['خبز عربي','صوصين','توقيعك'],img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=900&auto=format&fit=crop'}
+  special:{t:'الخاصة',d:'لقمتك توقيعك: لحم + خلطة صوصين + جبن + مقرمش + حار خفيف بالخبز العربي.',tags:['خبز عربي','صوصين','توقيعك'],img:'assets/img/siniya.jpg'}
 };
 const moodBtns=$$('.mood-tabs button');
 function setMood(key){
