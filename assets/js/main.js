@@ -113,7 +113,7 @@ const MOODS={
   spicy:{t:'الحارة',d:'لحم + صوص حار + فلفل مشوي + مخلل وبصل، كلها بالخبز العربي. للي يحب اللقمة تصحّيه.',tags:['خبز عربي','صوص حار','فلفل مشوي'],img:'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=900&auto=format&fit=crop'},
   cheesy:{t:'الجبنية',d:'لحم + دبل جبن + صوص جبن + بصل مكرمل. جزء من اللحم يجي مغطى بجبن ذايب.',tags:['خبز عربي','دبل جبن','صوص جبن'],img:'https://images.unsplash.com/photo-1546833999-b9f581a1996d?q=80&w=900&auto=format&fit=crop'},
   crunchy:{t:'المقرمشة',d:'لحم + مكون مقرمش + خس وبصل + صوص خاص بالخبز العربي. قرمشة مع كل لقمة.',tags:['خبز عربي','مقرمش','صوص خاص'],img:'https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=900&auto=format&fit=crop'},
-  sweet:{t:'حلوة / مالحة',d:'لحم + بصل مكرمل + مخلل + جبن + الصوص الخاص. توازن حلا وملوحة في لقمة واحدة.',tags:['خبز عربي','بصل مكرمل','الصوص الخاص'],img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=900&auto=format&fit=crop'},
+  sweet:{t:'حلوة / مالحة',d:'لحم + بصل مكرمل + مخلل + جبن + الصوص الخاص. توازن حلا وملوحة في لقمة واحدة.',tags:['خبز عربي','بصل مكرمل','الصوص الخاص'],img:'assets/img/siniya.jpg',p:'86% 78%'},
   special:{t:'الخاصة',d:'لقمتك توقيعك: لحم + خلطة صوصين + جبن + مقرمش + حار خفيف بالخبز العربي.',tags:['خبز عربي','صوصين','توقيعك'],img:'assets/img/siniya.jpg'}
 };
 const moodBtns=$$('.mood-tabs button');
@@ -121,7 +121,7 @@ function setMood(key){
   const m=MOODS[key]; if(!m) return;
   moodBtns.forEach(b=>b.classList.toggle('active',b.dataset.mood===key));
   const img=$('#moodImg'), title=$('#moodTitle'), desc=$('#moodDesc'), tags=$('#moodTags');
-  if(img){ img.src=m.img; img.alt='لقمة '+m.t; }
+  if(img){ img.src=m.img; img.alt='لقمة '+m.t; img.style.objectPosition=m.p||'50% 50%'; }
   if(title) title.textContent='لقمة '+m.t;
   if(desc) desc.textContent=m.d;
   if(tags) tags.innerHTML=m.tags.map(t=>`<span>${t}</span>`).join('');

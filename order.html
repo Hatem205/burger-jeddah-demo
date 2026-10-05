@@ -31,20 +31,25 @@
 <label><input type="radio" name="size" value="49"><span>مشاركة 2-3 — 49</span></label>
 </div></div>
 
-<div class="opt-card"><h3>2. نوع الخبز العربي</h3><div class="chips">
+<div class="opt-card"><h3>2. البروتين: لحم أو دجاج</h3><div class="chips">
+<label><input type="radio" name="protein" value="🥩 لحم بقري" checked><span>🥩 لحم بقري +0</span></label>
+<label><input type="radio" name="protein" value="🍗 دجاج مشوي" ><span>🍗 دجاج مشوي +0</span></label>
+</div></div>
+
+<div class="opt-card"><h3>3. نوع الخبز العربي</h3><div class="chips">
 <label><input type="radio" name="bread" value="0" checked><span>عربي طري +0</span></label>
 <label><input type="radio" name="bread" value="2"><span>تميس خاص +2</span></label>
 <label><input type="radio" name="bread" value="3"><span>محمص على الصاج +3</span></label>
 </div><small style="color:#7A6F63">الخبز أداة أكلك: تقتطع به اللحم وتبني اللقمة بيدك.</small></div>
 
-<div class="opt-card"><h3>3. نوع الصوص (اختر حتى 2)</h3><div class="chips" id="sauceChips">
+<div class="opt-card"><h3>4. نوع الصوص (اختر حتى 2)</h3><div class="chips" id="sauceChips">
 <label><input type="checkbox" value="0" checked><span>صوص خاص</span></label>
 <label><input type="checkbox" value="0"><span>صوص برجر</span></label>
 <label><input type="checkbox" value="2"><span>صوص جبن +2</span></label>
 <label><input type="checkbox" value="2"><span>صوص حار +2</span></label>
 </div><small style="color:#7A6F63">أول صوصين مجانًا ضمن الوجبة، الإضافي يُحسب في الإضافات.</small></div>
 
-<div class="opt-card"><h3>4. الإضافات</h3><div class="chips" id="extraChips">
+<div class="opt-card"><h3>5. الإضافات</h3><div class="chips" id="extraChips">
 <label><input type="checkbox" value="4"><span>🧀 جبن زيادة +4</span></label>
 <label><input type="checkbox" value="3"><span>مقرمش +3</span></label>
 <label><input type="checkbox" value="3"><span>فلفل مشوي +3</span></label>
@@ -52,9 +57,9 @@
 <label><input type="checkbox" value="0" checked><span>خس + طماطم + مخلل مجانًا</span></label>
 </div></div>
 
-<div class="opt-card"><h3>5. مستوى الحدة: <span id="spicyVal">وسط</span></h3><input type="range" id="spicy" min="0" max="3" value="1" aria-label="مستوى الحدة"><div style="display:flex;justify-content:space-between;font-size:.85rem;color:#7A6F63"><span>بدون حار</span><span>خفيف</span><span>وسط</span><span>نار 🔥</span></div></div>
+<div class="opt-card"><h3>6. مستوى الحدة: <span id="spicyVal">وسط</span></h3><input type="range" id="spicy" min="0" max="3" value="1" aria-label="مستوى الحدة"><div style="display:flex;justify-content:space-between;font-size:.85rem;color:#7A6F63"><span>بدون حار</span><span>خفيف</span><span>وسط</span><span>نار 🔥</span></div></div>
 
-<div class="opt-card"><h3>6. عدد الأشخاص: <span id="peopleVal">2</span></h3><input type="range" id="people" min="1" max="5" value="2" aria-label="عدد الأشخاص"><p style="font-size:.9rem;color:#7A6F63">نقترح: شخص واحد → وجبة 19 • شخصين → وجبة 35 • ثلاثة وأكثر → وجبة 49</p></div>
+<div class="opt-card"><h3>7. عدد الأشخاص: <span id="peopleVal">2</span></h3><input type="range" id="people" min="1" max="5" value="2" aria-label="عدد الأشخاص"><p style="font-size:.9rem;color:#7A6F63">نقترح: شخص واحد → وجبة 19 • شخصين → وجبة 35 • ثلاثة وأكثر → وجبة 49</p></div>
 </div>
 
 <aside class="summary" aria-live="polite">
@@ -75,6 +80,7 @@
 <script>
 const sizeEls=[...document.querySelectorAll('input[name=size]')];
 const breadEls=[...document.querySelectorAll('input[name=bread]')];
+const proteinEls=[...document.querySelectorAll('input[name=protein]')];
 const sauceEls=[...document.querySelectorAll('#sauceChips input')];
 const extraEls=[...document.querySelectorAll('#extraChips input')];
 const spicy=document.getElementById('spicy'), people=document.getElementById('people');
@@ -93,10 +99,11 @@ function calc(){
  document.getElementById('orderTotal').textContent=total+' ر.س';
  document.getElementById('orderImg').src=imgs[size];
  const breadName=document.querySelector('input[name=bread]:checked').parentElement.textContent.trim();
+ const protein=document.querySelector('input[name=protein]:checked').value;
  document.getElementById('orderLines').innerHTML=
- `🍔 ${names[size]}<br>🫓 ${breadName}<br>🧂 ${sauceCount} صوص • ${extraEls.filter(e=>e.checked).length} إضافات<br>🌶️ الحدة: ${spicyLabels[spicy.value]} • 👥 ${people.value} أشخاص`;
+ `🍔 ${names[size]}<br>${protein}<br>🫓 ${breadName}<br>🧂 ${sauceCount} صوص • ${extraEls.filter(e=>e.checked).length} إضافات<br>🌶️ الحدة: ${spicyLabels[spicy.value]} • 👥 ${people.value} أشخاص`;
 }
-[...sizeEls,...breadEls,...sauceEls,...extraEls,spicy,people].forEach(e=>e.addEventListener('input',calc));
+[...sizeEls,...breadEls,...proteinEls,...sauceEls,...extraEls,spicy,people].forEach(e=>e.addEventListener('input',calc));
 calc();
 document.getElementById('confirmBtn').addEventListener('click',()=>{
  const t=document.getElementById('toast');t.textContent='تم استلام طلبك التجريبي ✓ شكرًا!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);
