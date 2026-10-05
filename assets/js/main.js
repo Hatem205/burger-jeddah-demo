@@ -33,21 +33,21 @@ function setLang(l){
     el.textContent = l === 'en' ? el.dataset.en : el.dataset.ar;
   });
   if(langBtn) langBtn.textContent = l === 'en' ? 'عربي' : 'EN';
-  try{localStorage.setItem('lugma-lang',l);}catch(e){}
+  try{localStorage.setItem('hatemburger-lang',l);}catch(e){}
   document.title = l === 'en'
-    ? 'Different burger restaurant in Jeddah | LUGMAH (demo)'
-    : 'مطعم برجر بطريقة مختلفة في جدة | لُقمة (اسم تجريبي)';
+    ? 'Different burger restaurant in Jeddah | HATEM BURGER (demo)'
+    : 'مطعم برجر بطريقة مختلفة في جدة | برجر حاتم (اسم تجريبي)';
 }
 if(langBtn){
   langBtn.addEventListener('click',()=>{
     const cur = document.documentElement.lang === 'en' ? 'ar':'en';
     setLang(cur);
   });
-  try{ const saved = localStorage.getItem('lugma-lang'); if(saved) setLang(saved);}catch(e){}
+  try{ const saved = localStorage.getItem('hatemburger-lang'); if(saved) setLang(saved);}catch(e){}
 }
 
 // ---- السلة التجريبية (بدون Backend) ----
-const CART_KEY='lugma-cart-demo-v1';
+const CART_KEY='hatemburger-cart-demo-v1';
 function getCart(){ try{return JSON.parse(localStorage.getItem(CART_KEY))||[]}catch(e){return[]} }
 function saveCart(c){ try{localStorage.setItem(CART_KEY,JSON.stringify(c))}catch(e){} updateCartUI(); }
 function addToCart(item){
