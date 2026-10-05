@@ -1,0 +1,13 @@
+# تجاهل ملفات النظام
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# المحررات
+.vscode/
+.idea/
+*.code-workspace
+
+# المؤقت
+*.tmp
+*.log

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>القائمة | لُقمة برجر جدة (تجريبي)</title>
+<meta name="description" content="قائمة تجريبية: وجبات فردية ومشاركة وإضافات وصوصات ومشروبات. الأسعار افتراضية.">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">تخطي للمحتوى</a>
+<div class="demo-bar">⚠️ <strong>موقع تجريبي</strong> — كل المنتجات والأسعار افتراضية ولا يوجد بيع حقيقي.</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"><span>ل</span></span><span><b>لُقمة</b><small>اسم تجريبي • جدة</small></span></a>
+    <nav class="main-nav"><a href="index.html">الرئيسية</a><a href="index.html#tajriba">التجربة</a><a href="menu.html">القائمة</a><a href="index.html#why">من نحن</a><a href="index.html#place">الموقع</a></nav>
+    <div class="header-actions"><button id="langToggle" class="lang-toggle">EN</button><a href="order.html" class="btn btn-primary btn-sm">اطلب الآن</a><button class="menu-btn" aria-expanded="false" aria-label="فتح القائمة">☰</button></div>
+  </div>
+  <nav class="mobile-nav"><div class="container"><a href="index.html">الرئيسية</a><a href="menu.html">القائمة</a><a href="order.html">اطلب الآن</a></div></nav>
+</header>
+
+<main id="main">
+<div class="page-hero"><div class="container"><span class="badge">القائمة التجريبية</span><h1>وش تبي تاكل اليوم؟</h1><p>وجبات فردية ومشاركة + إضافات وصوصات. كل شي بسعر واضح، والطلب تجريبي بدون دفع حقيقي.</p></div></div>
+
+<div class="container">
+<div class="filters" role="tablist" aria-label="تصنيفات القائمة">
+<button class="active" data-filter="all">الكل</button>
+<button data-filter="single">وجبات فردية</button>
+<button data-filter="share">وجبات مشاركة</button>
+<button data-filter="extra">الإضافات</button>
+<button data-filter="sauce">الصوصات</button>
+<button data-filter="drink">المشروبات</button>
+</div>
+
+<div class="menu-grid" id="menuGrid">
+<!-- فردية -->
+<article class="dish" data-cat="single"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop" alt="وجبة فردية كلاسيكية" loading="lazy"><div class="dish-body"><h3>صحن فردي كلاسيك</h3><p><small>لحم + خبز + خس وطماطم + جبن + صوص خاص</small></p><div class="dish-meta"><span class="dish-price">19 ر.س*</span><button class="add-btn" data-add="m1" data-name="صحن فردي كلاسيك" data-price="19" data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="single"><img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=800&auto=format&fit=crop" alt="وجبة فردية حارة" loading="lazy"><div class="dish-body"><h3>صحن فردي حار</h3><p><small>لحم + صوص حار + فلفل مشوي + مخلل + بصل</small></p><div class="dish-meta"><span class="dish-price">21 ر.س*</span><button class="add-btn" data-add="m2" data-name="صحن فردي حار" data-price="21" data-img="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="single"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800&auto=format&fit=crop" alt="وجبة فردية جبنية" loading="lazy"><div class="dish-body"><h3>صحن فردي جبني</h3><p><small>دبل جبن + صوص جبن + بصل مكرمل</small></p><div class="dish-meta"><span class="dish-price">22 ر.س*</span><button class="add-btn" data-add="m3" data-name="صحن فردي جبني" data-price="22" data-img="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<!-- مشاركة -->
+<article class="dish" data-cat="share"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="وجبة مشاركة لشخصين" loading="lazy"><div class="dish-body"><h3>صحن مشاركة — شخصين ⭐</h3><p><small>لحم كبير + خبز زيادة + كل المكونات + صوصين</small></p><div class="dish-meta"><span class="dish-price">35 ر.س*</span><button class="add-btn" data-add="duo" data-name="وجبة شخصين" data-price="35" data-img="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="share"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop" alt="وجبة مشاركة كبيرة" loading="lazy"><div class="dish-body"><h3>صحن اللمة — 2-3 أشخاص</h3><p><small>أكبر صحن + كل الصوصات + مقرمش + فلفل مشوي</small></p><div class="dish-meta"><span class="dish-price">49 ر.س*</span><button class="add-btn" data-add="share" data-name="وجبة مشاركة" data-price="49" data-img="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<!-- إضافات -->
+<article class="dish" data-cat="extra"><img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=800&auto=format&fit=crop" alt="جبن إضافي" loading="lazy"><div class="dish-body"><h3>Extra Cheese</h3><p><small>جبن ذايب زيادة لأي صحن</small></p><div class="dish-meta"><span class="dish-price">4 ر.س*</span><button class="add-btn" data-add="e1" data-name="Extra Cheese" data-price="4" data-img="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="extra"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=800&auto=format&fit=crop" alt="إضافات مقرمشة" loading="lazy"><div class="dish-body"><h3>Crunchy</h3><p><small>خلطة مقرمشة تعطي قرمشة لكل لقمة</small></p><div class="dish-meta"><span class="dish-price">3 ر.س*</span><button class="add-btn" data-add="e2" data-name="Crunchy" data-price="3" data-img="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="extra"><img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=800&auto=format&fit=crop" alt="بصل مكرمل وفلفل" loading="lazy"><div class="dish-body"><h3>بصل مكرمل + فلفل مشوي</h3><p><small>حلاوة ونكهة شوي</small></p><div class="dish-meta"><span class="dish-price">3 ر.س*</span><button class="add-btn" data-add="e3" data-name="بصل مكرمل" data-price="3" data-img="https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<!-- صوصات -->
+<article class="dish" data-cat="sauce"><img src="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?q=80&w=800&auto=format&fit=crop" alt="صوص خاص" loading="lazy"><div class="dish-body"><h3>الصوص الخاص ⭐</h3><p><small>خلطة المطعم التجريبية</small></p><div class="dish-meta"><span class="dish-price">2 ر.س*</span><button class="add-btn" data-add="s1" data-name="الصوص الخاص" data-price="2" data-img="https://images.unsplash.com/photo-1472476443507-c7a5948772fc?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="sauce"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=800&auto=format&fit=crop" alt="صوص جبن" loading="lazy"><div class="dish-body"><h3>صوص جبن</h3><p><small>كريمي وذايب</small></p><div class="dish-meta"><span class="dish-price">2 ر.س*</span><button class="add-btn" data-add="s2" data-name="صوص جبن" data-price="2" data-img="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="sauce"><img src="https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=800&auto=format&fit=crop" alt="صوص حار" loading="lazy"><div class="dish-body"><h3>Spicy صوص حار</h3><p><small>للي يحب الحرارة</small></p><div class="dish-meta"><span class="dish-price">3 ر.س*</span><button class="add-btn" data-add="s3" data-name="صوص حار" data-price="3" data-img="https://images.unsplash.com/photo-1585238342024-78d387f4a707?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<!-- مشروبات -->
+<article class="dish" data-cat="drink"><img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=800&auto=format&fit=crop" alt="مشروبات غازية" loading="lazy"><div class="dish-body"><h3>مشروب غازي</h3><p><small>علبة — باردة</small></p><div class="dish-meta"><span class="dish-price">5 ر.س*</span><button class="add-btn" data-add="d1" data-name="مشروب غازي" data-price="5" data-img="https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="drink"><img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=800&auto=format&fit=crop" alt="عصير" loading="lazy"><div class="dish-body"><h3>عصير طازج</h3><p><small>برتقال / ليمون نعناع (تجريبي)</small></p><div class="dish-meta"><span class="dish-price">8 ر.س*</span><button class="add-btn" data-add="d2" data-name="عصير طازج" data-price="8" data-img="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+<article class="dish" data-cat="drink"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800&auto=format&fit=crop" alt="ماء" loading="lazy"><div class="dish-body"><h3>ماء</h3><p><small>علبة ماء</small></p><div class="dish-meta"><span class="dish-price">2 ر.س*</span><button class="add-btn" data-add="d3" data-name="ماء" data-price="2" data-img="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=400&auto=format&fit=crop">أضف للطلب</button></div></div></article>
+</div>
+<p class="disclaimer">* جميع الأسعار والصور افتراضية لأغراض التدريب فقط.</p>
+<div style="display:flex;gap:10px;margin:10px 0 30px;flex-wrap:wrap"><a href="order.html" class="btn btn-primary">كوّن وجبتك بنفسك</a><a href="index.html" class="btn btn-light">رجوع للرئيسية</a></div>
+</div>
+</main>
+
+<footer><div class="container footer-grid"><div><b>لُقمة (تجريبي)</b><p><small>جدة، السعودية • مشروع افتراضي</small></p></div><div><a href="index.html">الرئيسية</a><br><a href="#">Privacy Policy</a><br><a href="#">Terms & Conditions</a></div><div><div class="socials"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a></div></div></div>
+<div class="copy"><div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><span>© <span class="js-year"></span> لُقمة — تدريبي</span></div></div></footer>
+
+<button id="cartFab" class="cart-fab">🛒 السلة (<span class="cart-count">0</span>)</button>
+<div id="cartDrawer" class="cart-drawer"><div class="cart-head"><b>سلتك (تجريبية)</b><button id="cartClose" class="lang-toggle">إغلاق ✕</button></div><div id="cartItems" class="cart-items"></div><div class="cart-foot"><div style="display:flex;justify-content:space-between;font-weight:900"><span>الإجمالي</span><span class="cart-total">0 ر.س</span></div><a href="order.html" class="btn btn-primary" style="width:100%;margin-top:10px">إتمام الطلب التجريبي</a></div></div>
+<div id="toast" class="toast"></div>
+<script src="assets/js/main.js"></script>
+<script>
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active');
+ const f=b.dataset.filter;
+ document.querySelectorAll('#menuGrid .dish').forEach(d=>{
+   d.style.display=(f==='all'||d.dataset.cat===f)?'':'none';
+ });
+}));
+</script>
+</body>
+</html>
