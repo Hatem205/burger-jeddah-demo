@@ -207,6 +207,9 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 .focus-bread{object-position:86% 78%}
 .focus-bite{object-position:84% 28%}
 .focus-cheese{object-position:55% 74%}
+/* صندوق صورة مؤقت: يبدّله المالك بصورته يدويًا */
+.img-ph{background:#E9DFC9;border:2px dashed #B49F7E;border-radius:16px;min-height:180px;display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;text-align:center;color:#6B5B42;font-weight:800;padding:24px}
+.img-ph small{font-weight:700;color:#8A7A5F}
 @media(min-width:760px){
   .main-nav{display:flex;gap:18px;align-items:center}
   .main-nav a{text-decoration:none;font-weight:800;color:#3E352A}
