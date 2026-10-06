@@ -90,7 +90,8 @@ h2.title{font-size:clamp(1.4rem,5.5vw,2.1rem);line-height:1.3;margin:6px 0 8px;f
 .lead{color:#4E463C;max-width:44rem;font-size:.95rem}
 .grid-3{display:grid;gap:14px;margin-top:22px}
 .steps5{display:grid;gap:10px;margin-top:22px}
-.step5{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center;box-shadow:var(--shadow)}
+.step5{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px;text-align:center;box-shadow:var(--shadow)}
+.step5 img{width:100%;height:110px;object-fit:cover;border-radius:10px;margin-bottom:8px}
 .step5 .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--charcoal);color:var(--bread);font-weight:900;font-size:1.05rem;margin-bottom:8px}
 .step5 h3{margin:0 0 4px;font-size:1.02rem}
 .step5 p{margin:0;font-size:.85rem;color:#4E463C}
