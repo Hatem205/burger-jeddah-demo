@@ -106,7 +106,7 @@ updateCartUI();
 
 // ---- قسم اختر مزاجك (الرئيسية): أمثلة لتركيبات لقمات من الصينية ----
 const MOODS={
-  classic:{t:'الكلاسيكية',d:'اقتطع قطعة لحم بالخبز العربي + جبن ذايب + خس وطماطم + صوص كلاسيكي. لقمة متوازنة تعجب الكل.',tags:['خبز عربي','جبن','صوص كلاسيكي']},
+  classic:{t:'الكلاسيكية',d:'اقتطع قطعة لحم بالخبز العربي + جبن ذايب + خس وطماطم + صوص كلاسيكي. لقمة متوازنة تعجب الكل.',tags:['خبز عربي','جبن','صوص كلاسيكي'],img:'assets/img/classic.jpg'},
   spicy:{t:'الحارة',d:'لحم + صوص حار + فلفل مشوي + مخلل وبصل، كلها بالخبز العربي. للي يحب اللقمة تصحّيه.',tags:['خبز عربي','صوص حار','فلفل مشوي']},
   cheesy:{t:'الجبنية',d:'لحم + دبل جبن + صوص جبن + بصل مكرمل. جزء من اللحم يجي مغطى بجبن ذايب.',tags:['خبز عربي','دبل جبن','صوص جبن']},
   crunchy:{t:'المقرمشة',d:'لحم + مكون مقرمش + خس وبصل + صوص خاص بالخبز العربي. قرمشة مع كل لقمة.',tags:['خبز عربي','مقرمش','صوص خاص']},
@@ -118,7 +118,7 @@ function setMood(key){
   const m=MOODS[key]; if(!m) return;
   moodBtns.forEach(b=>b.classList.toggle('active',b.dataset.mood===key));
   const mi=$('#moodImg'), title=$('#moodTitle'), desc=$('#moodDesc'), tags=$('#moodTags');
-  if(mi){ mi.innerHTML='🍽️ لقمة '+m.t+'<br><small>صورة يضيفها المالك يدويًا</small>'; }
+  if(mi){ if(m.img){ mi.style.padding='0'; mi.style.border='0'; mi.innerHTML='<img src="'+m.img+'" alt="لقمة '+m.t+'" style="width:100%;height:100%;object-fit:cover;display:block">'; } else { mi.style.padding=''; mi.style.border=''; mi.innerHTML='🍽️ لقمة '+m.t+'<br><small>صورة يضيفها المالك يدويًا</small>'; } }
   if(title) title.textContent='لقمة '+m.t;
   if(desc) desc.textContent=m.d;
   if(tags) tags.innerHTML=m.tags.map(t=>`<span>${t}</span>`).join('');
