@@ -81,8 +81,8 @@ a{color:inherit}
 .quick-strip{background:#fff;border-block:1px solid var(--line)}
 .quick-grid{display:flex;gap:8px;padding:12px 0;overflow-x:auto;scrollbar-width:none}
 .quick-grid::-webkit-scrollbar{display:none}
-.quick-item{display:flex;gap:8px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-weight:700;font-size:.8rem;white-space:nowrap;flex-shrink:0}
-.quick-item i{width:30px;height:30px;border-radius:50%;background:var(--charcoal);color:var(--bread);display:grid;place-items:center;font-style:normal;font-size:1rem;flex-shrink:0}
+.quick-item{display:inline-flex;gap:6px;align-items:center;background:transparent;border:0;border-bottom:2px solid var(--line);border-radius:0;padding:6px 4px;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0;color:#5B4F3F}
+.quick-item i{display:none}
 /* أقسام */
 section.block{padding:40px 0}
 .kicker{color:var(--accent-dark);font-weight:900;letter-spacing:.2px;font-size:.9rem}
