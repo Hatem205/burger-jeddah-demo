@@ -21,7 +21,7 @@
 </header>
 
 <main id="main">
-<div class="page-hero"><div class="container"><span class="badge">خطوة بخطوة</span><h1>هذه وجبتك — سوّها على مزاجك.</h1><p>من صينية اللحم الكبيرة: تقتطع اللحم بالخبز العربي وتبني لقمتك. اختر اختياراتك وشوف ملخصك وسعرك لحظيًا.</p></div></div>
+<div class="page-hero"><div class="container"><span class="badge">خطوة بخطوة</span><h1>هذه وجبتك — سوّها على مزاجك.</h1><p>تقتطع اللحم بالخبز وتبني لقمتك — اختر وشوف السعر لحظيًا.</p></div></div>
 
 <div class="container order-grid">
 <div>
@@ -40,14 +40,14 @@
 <label><input type="radio" name="bread" value="0" checked><span>عربي طري +0</span></label>
 <label><input type="radio" name="bread" value="2"><span>تميس خاص +2</span></label>
 <label><input type="radio" name="bread" value="3"><span>محمص على الصاج +3</span></label>
-</div><small style="color:#7A6F63">الخبز أداة أكلك: تقتطع به اللحم وتبني اللقمة بيدك.</small></div>
+</div><small style="color:#7A6F63">الخبز أداة أكلك.</small></div>
 
 <div class="opt-card"><h3>4. نوع الصوص (اختر حتى 2)</h3><div class="chips" id="sauceChips">
 <label><input type="checkbox" value="0" checked><span>صوص خاص</span></label>
 <label><input type="checkbox" value="0"><span>صوص برجر</span></label>
 <label><input type="checkbox" value="2"><span>صوص جبن +2</span></label>
 <label><input type="checkbox" value="2"><span>صوص حار +2</span></label>
-</div><small style="color:#7A6F63">أول صوصين مجانًا ضمن الوجبة، الإضافي يُحسب في الإضافات.</small></div>
+</div><small style="color:#7A6F63">أول صوصين ضمن الوجبة.</small></div>
 
 <div class="opt-card"><h3>5. الإضافات</h3><div class="chips" id="extraChips">
 <label><input type="checkbox" value="4"><span>🧀 جبن زيادة +4</span></label>
@@ -59,7 +59,7 @@
 
 <div class="opt-card"><h3>6. مستوى الحدة: <span id="spicyVal">وسط</span></h3><input type="range" id="spicy" min="0" max="3" value="1" aria-label="مستوى الحدة"><div style="display:flex;justify-content:space-between;font-size:.85rem;color:#7A6F63"><span>بدون حار</span><span>خفيف</span><span>وسط</span><span>نار 🔥</span></div></div>
 
-<div class="opt-card"><h3>7. عدد الأشخاص: <span id="peopleVal">2</span></h3><input type="range" id="people" min="1" max="5" value="2" aria-label="عدد الأشخاص"><p style="font-size:.9rem;color:#7A6F63">نقترح: شخص واحد → وجبة 19 • شخصين → وجبة 35 • ثلاثة وأكثر → وجبة 49</p></div>
+<div class="opt-card"><h3>7. عدد الأشخاص: <span id="peopleVal">2</span></h3><input type="range" id="people" min="1" max="5" value="2" aria-label="عدد الأشخاص"><p style="font-size:.9rem;color:#7A6F63">شخص → 19 • شخصان → 35 • ثلاثة+ → 49</p></div>
 </div>
 
 <aside class="summary" aria-live="polite">
@@ -67,7 +67,7 @@
 <h2 style="margin:12px 0 4px">هذه وجبتك.</h2>
 <div id="orderLines" style="font-size:.95rem;color:#EADFCB"></div>
 <div class="total-row"><span>الإجمالي*</span><span id="orderTotal">35 ر.س</span></div>
-<p style="font-size:.8rem;color:#CBBEA6">* سعر تجريبي تفاعلي، يتغير مع اختياراتك. ليس سعرًا نهائيًا.</p>
+<p style="font-size:.8rem;color:#CBBEA6">* سعر تجريبي يتغير مع اختياراتك.</p>
 <button id="confirmBtn" class="btn btn-primary" style="width:100%;background:var(--bread);color:var(--charcoal)">تأكيد الطلب التجريبي ✓</button>
 <a href="menu.html" class="btn btn-ghost btn-sm" style="width:100%;margin-top:8px;border-color:var(--bread);color:var(--bread)">رجوع للقائمة</a>
 </aside>
