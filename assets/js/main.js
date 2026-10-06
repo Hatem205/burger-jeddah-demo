@@ -100,6 +100,14 @@ if(fab&&drawer){
   const close=$('#cartClose');
   if(close) close.addEventListener('click',()=>drawer.classList.remove('open'));
 }
+// إتمام الطلب: رسالة استلام فقط ثم تفريغ السلة
+const coBtn=$('#checkoutBtn');
+if(coBtn){ coBtn.addEventListener('click',()=>{
+  try{localStorage.removeItem(CART_KEY);}catch(e){}
+  updateCartUI();
+  if(drawer) drawer.classList.remove('open');
+  toast('تم استلام طلبك ✓ شكرًا!');
+});}
 updateCartUI();
 
 /* الصور والأصناف تُضاف يدويًا من المالك في assets/img/ — بدون صور مدمجة */
