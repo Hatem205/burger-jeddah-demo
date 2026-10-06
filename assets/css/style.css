@@ -79,9 +79,10 @@ a{color:inherit}
 .price-chip{background:var(--charcoal);color:var(--bread);font-weight:900;border-radius:999px;padding:6px 12px;white-space:nowrap}
 /* شريط فهم سريع */
 .quick-strip{background:#fff;border-block:1px solid var(--line)}
-.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:16px 0}
-.quick-item{display:flex;gap:10px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-weight:700;font-size:.92rem}
-.quick-item i{width:38px;height:38px;border-radius:12px;background:var(--charcoal);color:var(--bread);display:grid;place-items:center;font-style:normal;font-size:1.2rem;flex-shrink:0}
+.quick-grid{display:flex;gap:8px;padding:12px 0;overflow-x:auto;scrollbar-width:none}
+.quick-grid::-webkit-scrollbar{display:none}
+.quick-item{display:flex;gap:8px;align-items:center;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-weight:700;font-size:.8rem;white-space:nowrap;flex-shrink:0}
+.quick-item i{width:30px;height:30px;border-radius:50%;background:var(--charcoal);color:var(--bread);display:grid;place-items:center;font-style:normal;font-size:1rem;flex-shrink:0}
 /* أقسام */
 section.block{padding:40px 0}
 .kicker{color:var(--accent-dark);font-weight:900;letter-spacing:.2px;font-size:.9rem}
@@ -218,7 +219,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
   .menu-btn,.mobile-nav{display:none!important}
   .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;padding:44px 0 30px}
   .hero-card{bottom:18px}
-  .quick-grid{grid-template-columns:repeat(4,1fr)}
+  .quick-grid{justify-content:center;flex-wrap:wrap;overflow:visible}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .shared-grid{grid-template-columns:1fr 1fr;align-items:stretch}
   .shared img{height:100%;min-height:420px}
