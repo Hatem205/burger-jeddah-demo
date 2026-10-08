@@ -38,7 +38,7 @@ a{color:inherit}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900}
 .brand-mark{width:44px;height:44px;border-radius:14px;background:var(--cream-2);border:2px solid #111;display:grid;place-items:center;position:relative;overflow:hidden}
 .brand-mark span{position:relative;z-index:1}
-.brand-mark img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.brand-mark img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transform:scale(1.35)}
 .brand small{display:block;font-weight:700;font-size:.7rem;color:var(--accent-dark);line-height:1;margin-top:2px}
 .brand b{font-size:1.15rem;line-height:1}
 .main-nav{display:none}
