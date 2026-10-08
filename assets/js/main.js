@@ -29,11 +29,11 @@ const EN_DICT = {
 'موقع تجريبي':'Demo website',
 'لمشروع افتراضي لأغراض التدريب فقط — الاسم والأسعار والموقع غير نهائية.':'An imaginary project for training only — name, prices and location are not final.',
 '— كل المنتجات والأسعار افتراضية ولا يوجد بيع حقيقي.':'— all products and prices are fictional, no real selling.',
-'لقمة':'Lugma',
+'لقمة':'Luqma',
 'اسم تجريبي • جدة':'Demo name • Jeddah',
-'لقمة (تجريبي)':'Lugma (demo)',
-'لقمة — تجريبي':'Lugma — demo',
-'لقمة — نسخة تجريبية':'Lugma — training version',
+'لقمة (تجريبي)':'Luqma (demo)',
+'لقمة — تجريبي':'Luqma — demo',
+'لقمة — نسخة تجريبية':'Luqma — training version',
 'مشروع افتراضي للتعلم — كل المحتوى تجريبي.':'An imaginary learning project — all content is fictional.',
 'جدة، السعودية':'Jeddah, Saudi Arabia',
 'جدة، المملكة العربية السعودية':'Jeddah, Saudi Arabia',
@@ -106,13 +106,13 @@ const EN_DICT = {
 'جميع الأسعار والصور افتراضية لأغراض التدريب فقط.':'All prices and photos are fictional, for training only.',
 'كوّن وجبتك بنفسك (للعرض فقط)':'Build your meal (display only)',
 'رجوع للرئيسية':'Back home',
-'تخطي للمحتوى':'Skip to content','لقمة - الرئيسية':'Lugma - Home',
+'تخطي للمحتوى':'Skip to content','لقمة - الرئيسية':'Luqma - Home',
 'التنقل الرئيسي':'Main navigation','قائمة الجوال':'Mobile menu','تبديل اللغة':'Switch language',
 'فتح القائمة':'Open menu','فتح السلة':'Open cart','سلة الطلب التجريبية':'Demo cart',
 'خريطة تجريبية لمنطقة جدة':'Demo map of the Jeddah area',
 'تصنيفات القائمة':'Menu categories',
 'انستقرام تجريبي':'Demo Instagram','تيك توك تجريبي':'Demo TikTok','واتساب تجريبي':'Demo WhatsApp',
-'صينية لقمة: قطعة لحم ضخمة مشوية في المنتصف، جبن ذايب فوق جزء منها، وحولها الخبز وأوعية المكونات الصغيرة':'Lugma tray: a huge grilled meat cut in the middle, melted cheese over part of it, with bread and topping bowls around',
+'صينية لقمة: قطعة لحم ضخمة مشوية في المنتصف، جبن ذايب فوق جزء منها، وحولها الخبز وأوعية المكونات الصغيرة':'Luqma tray: a huge grilled meat cut in the middle, melted cheese over part of it, with bread and topping bowls around',
 'سلة الخبز العربي':'Arabic bread basket','قطعة اللحم المشوي':'Grilled meat cut',
 'أوعية المكونات':'Toppings bowls','أوعية الصوصات':'Sauce bowls',
 'اللقمة الجاهزة بالخبز العربي':'Finished bite in Arabic bread',
@@ -124,8 +124,8 @@ const EN_DICT = {
 };
 const EN_ATTRS = ['alt','aria-label','placeholder','title'];
 const EN_TITLES = {
-'مطعم برجر بطريقة مختلفة في جدة | لقمة (اسم تجريبي)':'Different burger restaurant in Jeddah | LUGMA (demo)',
-'القائمة | لقمة جدة (تجريبي)':'Menu | Lugma Jeddah (demo)'
+'مطعم برجر بطريقة مختلفة في جدة | لقمة (اسم تجريبي)':'Different burger restaurant in Jeddah | LUQMA (demo)',
+'القائمة | لقمة جدة (تجريبي)':'Menu | Luqma Jeddah (demo)'
 };
 const EN_METAS = {
 'جرّب البرجر بطريقة مختلفة في جدة. وجبة جماعية، لحم مشوي، خبز ومكونات تختار منها كل لقمة بطريقتك.':'Try burger differently in Jeddah. A sharing tray of grilled meat, bread and toppings — build every bite your way.',
@@ -173,7 +173,7 @@ function setLang(l){
   });
   if(langBtn) langBtn.textContent = l === 'en' ? 'عربي' : 'EN';
   try{ updateCartUI(); }catch(e){}
-  try{localStorage.setItem('lugma-lang',l);}catch(e){}
+  try{localStorage.setItem('luqma-lang',l);}catch(e){}
   const t = document.title.trim();
   if(l==='en'){ if(document._arTitle===undefined) document._arTitle = document.title; if(EN_TITLES[t]) document.title = EN_TITLES[t]; }
   else if(document._arTitle!==undefined){ document.title = document._arTitle; document._arTitle = undefined; }
@@ -189,11 +189,11 @@ if(langBtn){
     const cur = document.documentElement.lang === 'en' ? 'ar':'en';
     setLang(cur);
   });
-  try{ const saved = localStorage.getItem('lugma-lang'); if(saved) setLang(saved);}catch(e){}
+  try{ const saved = localStorage.getItem('luqma-lang'); if(saved) setLang(saved);}catch(e){}
 }
 
 // ---- السلة التجريبية (بدون Backend) ----
-const CART_KEY='lugma-cart-demo-v1';
+const CART_KEY='luqma-cart-demo-v1';
 function getCart(){ try{return JSON.parse(localStorage.getItem(CART_KEY))||[]}catch(e){return[]} }
 function saveCart(c){ try{localStorage.setItem(CART_KEY,JSON.stringify(c))}catch(e){} updateCartUI(); }
 function addToCart(item){
