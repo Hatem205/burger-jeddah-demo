@@ -112,7 +112,7 @@ const EN_DICT = {
 'خريطة تجريبية لمنطقة جدة':'Demo map of the Jeddah area',
 'تصنيفات القائمة':'Menu categories',
 'انستقرام تجريبي':'Demo Instagram','تيك توك تجريبي':'Demo TikTok','واتساب تجريبي':'Demo WhatsApp',
-'صينية لقمة: قطعة لحم ضخمة مشوية في المنتصف، جبن ذايب فوق جزء منها، وحولها الخبز وأوعية المكونات الصغيرة':'Luqma tray: a huge grilled meat cut in the middle, melted cheese over part of it, with bread and topping bowls around',
+'صينية لقمة الدائرية: لحم مشوي في النص، أوعية المكونات والصوصات حوله، يد تبني لقمة بالخبز، وسلة خبز بجانبها':'Round Luqma tray: grilled meat in the middle, topping and sauce bowls around, a hand building a bite with bread, and a bread basket beside it',
 'سلة الخبز العربي':'Arabic bread basket','قطعة اللحم المشوي':'Grilled meat cut',
 'أوعية المكونات':'Toppings bowls','أوعية الصوصات':'Sauce bowls',
 'اللقمة الجاهزة بالخبز العربي':'Finished bite in Arabic bread',
