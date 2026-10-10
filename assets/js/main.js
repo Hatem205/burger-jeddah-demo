@@ -97,11 +97,13 @@ const EN_DICT = {
 'القائمة التجريبية':'Demo menu','وش تبي تاكل اليوم؟':'What are you craving today?',
 'لا ساندويتش تقليدي — كل الأصناف من صينية اللحم: تقتطع بالخبز وتبني لقمتك. الطلب تجريبي.':'No classic sandwich — everything comes from the meat tray: cut with bread and build your bite. Demo ordering.',
 'الكل':'All','وجبات فردية':'Single trays','وجبات مشاركة':'Sharing trays','الإضافات':'Extras','الصوصات':'Sauces','المشروبات':'Drinks',
-'لحم + خس وطماطم ومخلل وبصل + صوص كلاسيكي وخردل.':'Meat + lettuce, tomato, pickles & onion + classic & mustard sauce.',
-'لحم مدخن + بصل مكرمل وفلفل مشوي + BBQ بالعسل.':'Smoked meat + caramelized onion & grilled peppers + honey BBQ.',
-'لحم حار + هالبينو وفلفل مشوي + صوص تشيبوتلي.':'Spicy meat + jalapeño & grilled peppers + chipotle sauce.',
-'لحم بنكهة سعودية + طماطم وفلفل + طحينة وصوص تمر.':'Saudi-style meat + tomato & peppers + tahini & date sauce.',
-'لحم + مقرمشات + صوص جبن بالثوم.':'Meat + crunchies + garlic cheese sauce.',
+'الوجبة الكلاسيكية بنكهة متوازنة: خس، طماطم، مخلل خيار، بصل أبيض، جبن شيدر، مع خردل وكتشب ومايونيز.':'Balanced classic: lettuce, tomato, cucumber pickles, white onion and cheddar with mustard, ketchup and mayo.',
+'نكهات مدخنة غنية: بصل مكرمل، لحم مقدد مقرمش، بصل مقلي، جبن شيدر وخس، مع باربكيو بالعسل وصوص مدخن ومايونيز الثوم.':'Rich smoky flavors: caramelized onion, crispy bacon, fried onion, cheddar and lettuce with honey BBQ, smoky sauce and garlic mayo.',
+'لعشاق الحرارة: جبن بيبر جاك، بصل أحمر، مخلل، خس وبصل مقرمش، مع تشيبوتلي ومايونيز سريراتشا وصوص حار بالليمون.':'For heat lovers: pepper jack, red onion, pickles, lettuce and crispy onion with chipotle, sriracha mayo and lemon hot sauce.',
+'نكهة عربية: طماطم مشوية، بصل مكرمل، حلوم مشوي، بصل مقرمش وجرجير، مع طحينة بالليمون وزبادي بالنعناع وثوم.':'Arabic flavors: grilled tomato, caramelized onion, grilled halloumi, crispy onion and arugula with lemon tahini, mint yogurt and garlic.',
+'قرمشة متنوعة: خس، ملفوف أحمر، بصل مقلي، بطاطس رفيعة، موزاريلا مقلية، مع صوص جبن بالثوم وعسل وخردل ورانش.':'All about crunch: lettuce, red cabbage, fried onion, thin potatoes and fried mozzarella with garlic cheese, honey mustard and ranch.',
+'كمأة وفطر مشوي: شيدر، فطر، بصل مكرمل، خس ومخلل، مع مايونيز ترافل وبارميزان كريمي وثوم.':'Truffle and grilled mushrooms: cheddar, mushrooms, caramelized onion, lettuce and pickles with truffle mayo, creamy parmesan and garlic.',
+'🥩 لحم':'🥩 Meat','🍗 دجاج':'🍗 Chicken',
 'ر.س*':'SAR','19 ر.س*':'19 SAR','أضف للطلب':'Add to order',
 'جميع الأسعار والصور افتراضية لأغراض التدريب فقط.':'All prices and photos are fictional, for training only.',
 'كوّن وجبتك بنفسك (للعرض فقط)':'Build your meal (display only)',
@@ -116,11 +118,12 @@ const EN_DICT = {
 'سلة الخبز العربي':'Arabic bread basket','قطعة اللحم المشوي':'Grilled meat cut',
 'أوعية المكونات':'Toppings bowls','أوعية الصوصات':'Sauce bowls',
 'اللقمة الجاهزة بالخبز العربي':'Finished bite in Arabic bread',
-'صينية كلاسيك: لحم مشوي مع الخس والطماطم والمخلل والبصل':'Classic tray: grilled meat with lettuce, tomato, pickles and onion',
-'صينية سموكي: لحم مدخن مع البصل المكرمل والفلفل المشوي':'Smoky tray: smoked meat with caramelized onion and grilled peppers',
-'صينية فاير: لحم حار مع الهالبينو والفلفل المشوي':'Fire tray: spicy meat with jalapeño and grilled peppers',
-'صينية نجدي: لحم بنكهة سعودية مع الطماطم والطحينة':'Najdi tray: Saudi-style meat with tomato and tahini',
-'صينية كرنش: لحم مع المخلل المقلي والبصل المقرمش':'Crunch tray: meat with fried pickles and crispy onion'
+'صينية كلاسيك باللحم':'Classic meat tray',
+'صينية سموكي باللحم':'Smoky meat tray',
+'صينية فاير باللحم':'Fire meat tray',
+'صينية نجدي باللحم':'Najdi meat tray',
+'صينية كرنش باللحم':'Crunch meat tray',
+'صينية ترافل باللحم':'Truffle meat tray',
 };
 const EN_ATTRS = ['alt','aria-label','placeholder','title'];
 const EN_TITLES = {
@@ -240,6 +243,20 @@ document.addEventListener('click',(e)=>{
   if(btn){
     addToCart({id:btn.dataset.add,name:btn.dataset.name,price:Number(btn.dataset.price||0),img:btn.dataset.img||''});
   }
+  const pt=e.target.closest('[data-protein]');
+  if(pt){
+    const card=pt.closest('.dish'); if(!card) return;
+    card.querySelectorAll('[data-protein]').forEach(b=>b.classList.toggle('active',b===pt));
+    const img=card.querySelector('img'), add=card.querySelector('[data-add]');
+    if(img&&pt.dataset.src){ img.src=pt.dataset.src; if(pt.dataset.alt) img.alt=pt.dataset.alt; }
+    if(add){
+      if(!add.dataset.base) add.dataset.base=add.dataset.add;
+      add.dataset.add = pt.dataset.label==='دجاج' ? add.dataset.base+'-chicken' : add.dataset.base;
+      if(pt.dataset.src) add.dataset.img=pt.dataset.src;
+      const base=(add.dataset.name||'').replace(/ \((لحم|دجاج|Meat|Chicken)\)$/,'');
+      add.dataset.name=base+(pt.dataset.label?` (${pt.dataset.label})`:'');
+    }
+  }
 });
 const fab=$('#cartFab'), drawer=$('#cartDrawer');
 if(fab&&drawer){
@@ -261,12 +278,12 @@ updateCartUI();
 
 // ---- قسم اختر مزاجك (الرئيسية): أمثلة لتركيبات لقمات من الصينية ----
 const MOODS={
-  classic:{t:'الكلاسيكية',d:'لحم بالخبز + جبن + خس وطماطم + صوص كلاسيكي.',tags:['خبز عربي','جبن','صوص كلاسيكي'],img:'assets/img/classic.jpg'},
-  spicy:{t:'الحارة',d:'لحم + صوص حار + فلفل مشوي + مخلل بالخبز.',tags:['خبز عربي','صوص حار','فلفل مشوي'],img:'assets/img/fire.jpg'},
-  cheesy:{t:'الجبنية',d:'لحم + دبل جبن + صوص جبن + بصل مكرمل.',tags:['خبز عربي','دبل جبن','صوص جبن']},
-  crunchy:{t:'المقرمشة',d:'لحم + مقرمش + خس + صوص خاص بالخبز.',tags:['خبز عربي','مقرمش','صوص خاص'],img:'assets/img/crunch.jpg'},
-  sweet:{t:'حلوة / مالحة',d:'لحم + بصل مكرمل + مخلل + الصوص الخاص.',tags:['خبز عربي','بصل مكرمل','الصوص الخاص']},
-  special:{t:'الخاصة',d:'لحم + صوصين + جبن + مقرمش بالخبز.',tags:['خبز عربي','صوصين','توقيعك'],img:'assets/img/najdi.jpg'}
+  classic:{t:'الكلاسيكية',d:'لحم بالخبز + جبن + خس وطماطم + صوص كلاسيكي.',tags:['خبز عربي','جبن','صوص كلاسيكي'],img:'assets/img/meal-classic-meat.jpg'},
+  spicy:{t:'الحارة',d:'لحم + صوص حار + فلفل مشوي + مخلل بالخبز.',tags:['خبز عربي','صوص حار','فلفل مشوي'],img:'assets/img/meal-fire-meat.jpg'},
+  cheesy:{t:'الجبنية',d:'لحم + دبل جبن + صوص جبن + بصل مكرمل.',tags:['خبز عربي','دبل جبن','صوص جبن'],img:'assets/img/meal-truffle-meat.jpg'},
+  crunchy:{t:'المقرمشة',d:'لحم + مقرمش + خس + صوص خاص بالخبز.',tags:['خبز عربي','مقرمش','صوص خاص'],img:'assets/img/meal-crunch-meat.jpg'},
+  sweet:{t:'حلوة / مالحة',d:'لحم + بصل مكرمل + مخلل + الصوص الخاص.',tags:['خبز عربي','بصل مكرمل','الصوص الخاص'],img:'assets/img/meal-smoky-meat.jpg'},
+  special:{t:'الخاصة',d:'لحم + صوصين + جبن + مقرمش بالخبز.',tags:['خبز عربي','صوصين','توقيعك'],img:'assets/img/meal-najdi-meat.jpg'}
 };
 const moodBtns=$$('.mood-tabs button');
 function setMood(key){
